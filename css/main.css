@@ -5,3 +5,130 @@
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
+body {
+  background: #0aa695;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  vertical-align: middle;
+}
+.main {
+  background: #fff;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 8px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+  padding: 10px;
+}
+.box__header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  border-bottom: solid;
+  border-color: #e6e6e6;
+}
+.img {
+  margin: 10px;
+  height: 50px;
+  width: auto;
+}
+.box__date {
+  display: flex;
+  align-items: center;
+}
+.actual__day-number {
+  font-size: 46px;
+  color: #0fc3b0;
+  font-weight: bold;
+  margin-right: 7px;
+}
+.date__info {
+  font-size: 13px;
+}
+.actual__day {
+  font-weight: bold;
+}
+.box__task {
+  margin-left: 10px;
+  margin-top: 20px;
+  height: 300px;
+}
+.task_list {
+  list-style: none;
+}
+li{
+  padding: 7px 0;
+}
+.btn__add-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: solid;
+  border-color: #e6e6e6;
+}
+.btn__plus {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #0fc3b0;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.btn__plus-img {
+  width: 70%;
+}
+.add__task {
+  position: absolute;
+  color: #fff;
+  background-color: #169688;
+  bottom: 22%;
+  width: 280px;
+  height: 150px;
+  border-radius: 5px;
+  margin: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 8px 10px, rgba(0, 0, 0, 0.23) 0px 3px 10px;
+  z-index: 2;
+}
+.hidden{
+  display: none;
+}
+.form__task {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+#new_task {
+  width: 90%;
+  padding: 5px;
+  font-size: 18px;
+  background-color: #169688;
+  border: 1px solid #fff;
+  color: #fff;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+#new_task::placeholder {
+  color: #ebdede;
+}
+.btn__add{
+  background-color: #169688;
+  border: 1px solid #fff;
+  border-radius: 30px;
+  width: 50%;
+  font-size: 20px;
+  padding: 7px;
+  align-items: center;
+  margin: -7px 69px;
+  color: #fff;
+  cursor: pointer;
+}
+.visible{
+  display: block;
+}
+.opacity {
+  opacity: 0.2;
+}

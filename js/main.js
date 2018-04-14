@@ -7,7 +7,7 @@ const MONTHS = ['Enero','Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', '
 //variable declaration
 let taskList = document.querySelector('.task_list');
 let addNewTask = document.querySelector('.btn__add');
-
+let newTask = document.querySelector('.btn__add-new');
 //Add header date
 function headerDate() {
   //get actual number day
@@ -21,14 +21,20 @@ function headerDate() {
 // look if I have elements in local Storage
 const localTasks = (localStorage.getItem('dataTasks') ? JSON.parse(localStorage.getItem('dataTasks')) : []);
 
-//paint tasks
+//Add new task
 function addTask() {
-  let newTask = document.getElementById('new_task').value; //get input value
+  let newTask = {
+    name: document.getElementById('new_task').value, //get input value
+    check: false
+  };
 
-  taskList.innerHTML += `<li><input type="checkbox"> ${newTask} </li>`;
+  taskList.innerHTML += `<li><input type="checkbox" name="check" value=${newTask.name}> ${newTask.name} </li>`;
 
   localTasks.push(newTask);
   saveLocalStorage(localTasks);
+  document.querySelector('.principal__section').classList.remove('opacity');
+  document.querySelector('.add__task').classList.remove('visible');
+
 }
 
 // save tasks in local Storage
@@ -39,12 +45,28 @@ function saveLocalStorage(localTasks){
 function showTasks() {
   if (localTasks !== null) {
     for (let i = 0; i < localTasks.length; i++) {
-      taskList.innerHTML += `<li><input type="checkbox"> ${localTasks[i]} </li>`;
+      let checkedStr = '';
+      if (localTasks[i].check) {
+        checkedStr = 'checked';
+      }
+      taskList.innerHTML += `<li><input type="checkbox" name="check" value=${localTasks[i].check} ${checkedStr}> ${localTasks[i].name} </li>`;
     }
   }
 }
+//Mostrar formulario
+function showAddTask() {
+  document.querySelector('.principal__section').classList.add('opacity');
+  document.querySelector('.add__task').classList.add('visible');
+}
+
+// function setTaskCheck(taskIndex) {
+//   localTasks[taskIndex].check = !localTasks[taskIndex].check;
+//   saveLocalStorage();
+// }
 
 // call events and functions
 document.addEventListener('DOMContentLoaded', headerDate);
+newTask.addEventListener('click', showAddTask);
 addNewTask.addEventListener('click', addTask);
+
 showTasks();

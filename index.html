@@ -8,32 +8,32 @@
   </head>
 
   <body>
-    <main>
+    <main class="main">
+      <section class="principal__section">
       <!-- header secction -->
-      <header class="">
-        <img src="img/adalab.png" alt="adalab logo">
-        <div class="">
-          <span class="actual__day-number"></span><!-- number day -->
-          <div class="">
-            <p class="actual__day"></p><!-- day -->
-            <p class="actual__month-year"></p><!-- month and year -->
+        <header class="box__header">
+          <img class="img" src="img/adalab.png" alt="adalab logo">
+          <div class="box__date">
+            <span class="actual__day-number"></span><!-- number day -->
+            <div class="date__info">
+              <p class="actual__day"></p><!-- day -->
+              <p class="actual__month-year"></p><!-- month and year -->
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
       <!-- Tasks Secction -->
-      <section>
-        <div class="">
+        <div class="box__task">
           <ul class="task_list"></ul>
         </div>
-        <div class="">
-          <button type="button" name="button">plus</button>
+        <div class="btn__add-new">
+          <button class="btn__plus" type="button" name="button"><img class="btn__plus-img" src="img/plus.png" alt="add new"></button>
         </div>
       </section>
       <!-- Add Tasks Secction -->
       <section>
-        <div class="">
-          <form class="">
-            <label for="">Nueva tarea</label>
+        <div class="add__task hidden">
+          <form class="form__task">
+            <label>Nueva tarea</label>
             <input type="text" name="new_task" id="new_task" placeholder="Tarea nueva">
           </form>
           <button class="btn__add" type="button" name="button">Añadir</button>
